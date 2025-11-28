@@ -1,0 +1,21 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> dots) {
+    int minX = dots[0][0], maxX = dots[0][0];
+    int minY = dots[0][1], maxY = dots[0][1];
+
+    for (auto& d : dots) {
+        minX = min(minX, d[0]);
+        maxX = max(maxX, d[0]);
+        minY = min(minY, d[1]);
+        maxY = max(maxY, d[1]);
+    }
+
+    int width = maxX - minX;
+    int height = maxY - minY;
+
+    return width * height;
+}
